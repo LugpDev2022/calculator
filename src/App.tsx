@@ -1,4 +1,5 @@
 import { ButtonsGrid, Screen } from './components';
+import './App.css';
 
 function App() {
   const showOnScreen: string = '1 + 1';
