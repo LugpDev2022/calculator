@@ -1,4 +1,4 @@
-import { Screen } from './Screen';
+import { Screen } from './';
 
 export const Calculator = () => {
   const showOnScreen: string = '1 + 1';
