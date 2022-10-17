@@ -1,4 +1,5 @@
-import { ButtonsGrid, Screen } from './components';
+import { ButtonsGrid } from './ui';
+import { Screen } from './components';
 import './App.css';
 
 function App() {
