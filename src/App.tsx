@@ -1,4 +1,4 @@
-import { Screen } from './components';
+import { ButtonsGrid, Screen } from './components';
 
 function App() {
   const showOnScreen: string = '1 + 1';
@@ -13,6 +13,8 @@ function App() {
         <div className='col-11 col-sm-10 col-md-8 col-lg-6 bg-dark rounded-3'>
           <div className='container p-3'>
             <Screen showOnScreen={showOnScreen} />
+
+            <ButtonsGrid />
           </div>
         </div>
       </div>
