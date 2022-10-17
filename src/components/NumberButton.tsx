@@ -1,5 +1,5 @@
 type Props = {
-  buttonSymbol: string;
+  buttonSymbol: number;
 };
 
 export const Button: React.FC<Props> = ({ buttonSymbol }) => {
