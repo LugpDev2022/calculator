@@ -4,7 +4,7 @@ import { Screen } from './components';
 import './App.css';
 
 function App() {
-  const [showOnScreen, setShowOnScreen] = useState('1 + 1');
+  const [showOnScreen, setShowOnScreen] = useState('0');
 
   const onButtonClick = ({ target }: any) => {
     setShowOnScreen(value => value + target.innerHTML);

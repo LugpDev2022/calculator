@@ -1,14 +1,11 @@
 import { MouseEventHandler } from 'react';
 
 type Props = {
-  buttonSymbol: number;
+  buttonSymbol: string;
   onButtonClick: MouseEventHandler<HTMLButtonElement>;
 };
 
-export const NumberButton: React.FC<Props> = ({
-  buttonSymbol,
-  onButtonClick,
-}) => {
+export const Button: React.FC<Props> = ({ buttonSymbol, onButtonClick }) => {
   return (
     <button
       onClick={onButtonClick}
