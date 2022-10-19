@@ -1,5 +1,6 @@
 import { NumberButton, ResultButton } from '../components';
 import { numbers } from '../assets';
+import { StyledButton } from '../components/buttons/StyledButton';
 
 export const ButtonsGrid = () => (
   <div className='row mt-1'>

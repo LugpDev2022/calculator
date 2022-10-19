@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { AppContext } from '../../context';
+import { StyledButton } from './StyledButton';
 
 type Props = {
   number: number;
@@ -7,14 +8,5 @@ type Props = {
 
 export const NumberButton: React.FC<Props> = ({ number }) => {
   const { onButtonClick } = useContext(AppContext);
-
-  return (
-    <button
-      onClick={onButtonClick}
-      type='button'
-      className='btn btn-secondary my-button mt-4 fs-5'
-    >
-      {number}
-    </button>
-  );
+  return <StyledButton clickFunction={onButtonClick}>{number}</StyledButton>;
 };
