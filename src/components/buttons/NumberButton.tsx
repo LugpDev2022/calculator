@@ -7,6 +7,9 @@ type Props = {
 };
 
 export const NumberButton: React.FC<Props> = ({ number }) => {
-  const { onButtonClick } = useContext(AppContext);
-  return <StyledButton clickFunction={onButtonClick}>{number}</StyledButton>;
+  const { onNumberButtonClick } = useContext(AppContext);
+
+  return (
+    <StyledButton clickFunction={onNumberButtonClick}>{number}</StyledButton>
+  );
 };

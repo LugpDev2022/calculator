@@ -7,6 +7,10 @@ type Props = {
 };
 
 export const OperatorButton: React.FC<Props> = ({ operator }) => {
-  const { onButtonClick } = useContext(AppContext);
-  return <StyledButton clickFunction={onButtonClick}>{operator}</StyledButton>;
+  const { onOperationButtonClick } = useContext(AppContext);
+  return (
+    <StyledButton clickFunction={onOperationButtonClick}>
+      {operator}
+    </StyledButton>
+  );
 };

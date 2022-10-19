@@ -1,1 +1,1 @@
-export const operators: string[] = ['+', '-', '/', 'x', '(', ')'];
+export const operators: string[] = ['+', '-', '/', '*'];
