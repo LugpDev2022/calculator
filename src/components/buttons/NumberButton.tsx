@@ -1,11 +1,11 @@
 import { useContext } from 'react';
-import { AppContext } from '../context';
+import { AppContext } from '../../context';
 
 type Props = {
-  buttonSymbol: string;
+  number: number;
 };
 
-export const Button: React.FC<Props> = ({ buttonSymbol }) => {
+export const NumberButton: React.FC<Props> = ({ number }) => {
   const { onButtonClick } = useContext(AppContext);
 
   return (
@@ -14,7 +14,7 @@ export const Button: React.FC<Props> = ({ buttonSymbol }) => {
       type='button'
       className='btn btn-secondary my-button mt-4 fs-5'
     >
-      {buttonSymbol}
+      {number}
     </button>
   );
 };

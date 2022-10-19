@@ -1,3 +1,2 @@
-export * from './Button'
-export * from './ResultButton'
-export * from './Screen'
+export * from './Screen';
+export * from './buttons';
