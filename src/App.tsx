@@ -1,9 +1,14 @@
+import { useState } from 'react';
 import { ButtonsGrid } from './ui';
 import { Screen } from './components';
 import './App.css';
 
 function App() {
-  const showOnScreen: string = '1 + 1';
+  const [showOnScreen, setShowOnScreen] = useState('1 + 1');
+
+  const onButtonClick = ({ target }: any) => {
+    setShowOnScreen(value => value + target.innerHTML);
+  };
 
   return (
     <div className='container'>
@@ -16,7 +21,7 @@ function App() {
           <div className='container p-3'>
             <Screen showOnScreen={showOnScreen} />
 
-            <ButtonsGrid />
+            <ButtonsGrid onButtonClick={onButtonClick} />
           </div>
         </div>
       </div>
