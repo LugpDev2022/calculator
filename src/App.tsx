@@ -7,6 +7,11 @@ function App() {
   const [showOnScreen, setShowOnScreen] = useState('0');
 
   const onButtonClick = ({ target }: any) => {
+    if (showOnScreen === '0') {
+      setShowOnScreen(target.innerHTML);
+      return;
+    }
+
     setShowOnScreen(value => value + target.innerHTML);
   };
 
