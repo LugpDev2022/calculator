@@ -5,14 +5,12 @@ type Props = {
   onButtonClick: MouseEventHandler<HTMLButtonElement>;
 };
 
-export const Button: React.FC<Props> = ({ buttonSymbol, onButtonClick }) => {
-  return (
-    <button
-      onClick={onButtonClick}
-      type='button'
-      className='btn btn-secondary my-button mt-4 fs-5'
-    >
-      {buttonSymbol}
-    </button>
-  );
-};
+export const Button: React.FC<Props> = ({ buttonSymbol, onButtonClick }) => (
+  <button
+    onClick={onButtonClick}
+    type='button'
+    className='btn btn-secondary my-button mt-4 fs-5'
+  >
+    {buttonSymbol}
+  </button>
+);

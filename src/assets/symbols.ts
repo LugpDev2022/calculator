@@ -16,5 +16,4 @@ export const symbols: string[] = [
   'x',
   '(',
   ')',
-  '=',
 ];

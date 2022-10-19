@@ -1,4 +1,4 @@
-import { Button } from '../components';
+import { Button, ResultButton } from '../components';
 import { MouseEventHandler } from 'react';
 import { symbols } from '../assets/symbols';
 
@@ -19,6 +19,7 @@ export const ButtonsGrid: React.FC<Props> = ({ onButtonClick }) => (
             />
           );
         })}
+        <ResultButton />
       </div>
     </div>
   </div>
