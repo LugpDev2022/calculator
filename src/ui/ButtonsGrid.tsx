@@ -27,7 +27,7 @@ type Props = {
 };
 
 export const ButtonsGrid: React.FC<Props> = ({ onButtonClick }) => (
-  <div className='row mt-4'>
+  <div className='row mt-1'>
     <div className='col-12'>
       <div className='d-flex flex-wrap justify-content-between'>
         {symbols.map(symbol => {
