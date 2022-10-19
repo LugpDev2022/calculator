@@ -1,26 +1,6 @@
-import { MouseEventHandler } from 'react';
 import { Button } from '../components';
-
-const symbols: string[] = [
-  '1',
-  '2',
-  '3',
-  '4',
-  '5',
-  '6',
-  '7',
-  '8',
-  '9',
-  '0',
-  '.',
-  '+',
-  '-',
-  '/',
-  'x',
-  '(',
-  ')',
-  '=',
-];
+import { MouseEventHandler } from 'react';
+import { symbols } from '../assets/symbols';
 
 type Props = {
   onButtonClick: MouseEventHandler<HTMLButtonElement>;
