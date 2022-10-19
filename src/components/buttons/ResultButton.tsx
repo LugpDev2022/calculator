@@ -1,9 +1,9 @@
+import { useContext } from 'react';
+import { AppContext } from '../../context';
 import { StyledButton } from './StyledButton';
 
 export const ResultButton = () => {
-  return (
-    <StyledButton clickFunction={() => console.log('Show results ')}>
-      =
-    </StyledButton>
-  );
+  const { onResultClick } = useContext(AppContext);
+
+  return <StyledButton clickFunction={onResultClick}>=</StyledButton>;
 };

@@ -7,7 +7,6 @@ type Props = {
 
 export const ContextProvider: React.FC<Props> = ({ children }) => {
   const [showOnScreen, setShowOnScreen] = useState('0');
-  const [operationResult, setOperationResult] = useState(0);
 
   const onNumberButtonClick = ({ target }: any) => {
     if (showOnScreen === '0') {
@@ -15,16 +14,19 @@ export const ContextProvider: React.FC<Props> = ({ children }) => {
       return;
     }
 
-    setShowOnScreen(value => value + target.innerHTML);
+    if (showOnScreen.length < 20) {
+      setShowOnScreen(value => value + target.innerHTML);
+    }
   };
 
   const onOperationButtonClick = ({ target }: any) => {
-    if (showOnScreen === '0') {
-      setShowOnScreen(target.innerHTML);
-      return;
+    if (showOnScreen.length < 19) {
+      setShowOnScreen(value => value + target.innerHTML);
     }
+  };
 
-    setShowOnScreen(value => value + target.innerHTML);
+  const onResultClick = () => {
+    setShowOnScreen(eval(showOnScreen).toString());
   };
 
   const onDeleteButton = () => {
@@ -39,10 +41,11 @@ export const ContextProvider: React.FC<Props> = ({ children }) => {
   return (
     <AppContext.Provider
       value={{
+        onDeleteButton,
         onNumberButtonClick,
         onOperationButtonClick,
+        onResultClick,
         showOnScreen,
-        onDeleteButton,
       }}
     >
       {children}
