@@ -1,2 +1,2 @@
 export * from './numbers';
-export * from './numbers';
+export * from './operators';
