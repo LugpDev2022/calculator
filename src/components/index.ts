@@ -1,3 +1,3 @@
-export * from './NumberButton'
+export * from './Button'
 export * from './ResultButton'
 export * from './Screen'

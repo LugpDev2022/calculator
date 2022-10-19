@@ -1,13 +1,11 @@
-import { MouseEventHandler } from 'react';
-
-type Props = {
-  showOnScreen: string;
-  onDeleteButton: MouseEventHandler<HTMLButtonElement>;
-};
-
 //TODO: Set max number of characters to 50
 
-export const Screen: React.FC<Props> = ({ showOnScreen, onDeleteButton }) => {
+import { useContext } from 'react';
+import { AppContext } from '../context';
+
+export const Screen = () => {
+  const { showOnScreen, onDeleteButton } = useContext(AppContext);
+
   return (
     <div className='row bg-white rounded-4'>
       <div className='col-12 pe-0 d-flex justify-content-between align-items-center'>
