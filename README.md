@@ -2,10 +2,6 @@
 
 This is a basic calculator created for practice and develop my programming knowledge.
 
-## Author
-
-[@LugpDev2022](https://github.com/LugpDev2022)
-
 ## Screenshots
 
 ![Screenshot](https://user-images.githubusercontent.com/97978467/197044577-cc425653-1fce-4bb2-a304-21fa89973212.png)
