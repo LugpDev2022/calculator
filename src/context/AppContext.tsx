@@ -1,9 +1,11 @@
 import { createContext, MouseEventHandler } from 'react';
 
-// type Context = {
-//   showOnScreen: string;
-//   onButtonClick: MouseEventHandler<HTMLButtonElement>;
-//   onDeleteButton: MouseEventHandler<HTMLButtonElement>;
-// };
-
-export const AppContext = createContext({});
+export const AppContext = createContext(
+  {} as {
+    onDeleteButton: MouseEventHandler<HTMLButtonElement>;
+    onNumberButtonClick: MouseEventHandler<HTMLButtonElement>;
+    onOperationButtonClick: MouseEventHandler<HTMLButtonElement>;
+    onResultClick: MouseEventHandler<HTMLButtonElement>;
+    showOnScreen: string;
+  }
+);

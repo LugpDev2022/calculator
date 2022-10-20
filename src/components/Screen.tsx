@@ -1,5 +1,3 @@
-//TODO: Set max number of characters to 50
-
 import { useContext } from 'react';
 import { AppContext } from '../context';
 
