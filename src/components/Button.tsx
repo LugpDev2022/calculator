@@ -4,21 +4,24 @@ interface Props {
 }
 
 const Button: React.FC<Props> = ({ children, isThemeDark }) => {
+  const buttonStyle = `
+    bg-${isThemeDark ? 'slate-400' : 'slate-50'}
+    hover:bg-${isThemeDark ? '[#446478]' : '[#DFEA68]'}
+    text-${isThemeDark ? 'white' : 'amber-400'}
+    py-2
+    rounded-lg
+    sm:py-4
+    font-bold
+    text-3xl
+    transition
+  `;
+
+  const handleClick = () => {
+    console.log('click');
+  };
+
   return (
-    <button
-      onClick={() => console.log('click')}
-      className={`
-        ${isThemeDark ? 'bg-slate-400' : 'bg-slate-50'}
-        ${isThemeDark ? 'hover:bg-[#446478]' : 'hover:bg-[#DFEA68]'}
-        ${isThemeDark ? 'text-white' : 'text-amber-400'}
-        py-2
-        rounded-lg
-        sm:py-4
-        font-bold
-        text-3xl
-        transition
-      `}
-    >
+    <button onClick={handleClick} className={buttonStyle}>
       {children}
     </button>
   );
