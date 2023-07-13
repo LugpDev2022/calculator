@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import ThemeSwitch from './components/ThemeSwitch';
 import Screen from './components/Screen';
+import ButtonsGrid from './components/ButtonsGrid';
 
 function App() {
   const [isThemeDark, setIsThemeDark] = useState(true);
@@ -22,7 +23,7 @@ function App() {
         className={`
           ${isThemeDark ? 'bg-slate-800' : 'bg-yellow-200'}
           ${isThemeDark ? 'text-white' : 'text-amber-400'}
-          w-4/5
+          w-[90%]
           max-w-lg
           p-5
           rounded-2xl
@@ -49,6 +50,8 @@ function App() {
         </div>
 
         <Screen isThemeDark={isThemeDark} />
+
+        <ButtonsGrid isThemeDark={isThemeDark} />
       </main>
     </div>
   );

@@ -10,7 +10,6 @@ const Screen: React.FC<Props> = ({ isThemeDark }) => {
     <div
       className={`
         ${isThemeDark ? 'bg-slate-400' : 'bg-slate-50'}
-        transition
         my-5
         rounded-2xl
         w-full
@@ -20,7 +19,8 @@ const Screen: React.FC<Props> = ({ isThemeDark }) => {
     >
       <span
         className={`
-          ${isThemeDark ? 'text-white/60' : 'text-amber-400'}
+          ${isThemeDark ? 'text-white/60' : 'text-amber-400/60'}
+          transition
           block
           w-full
           text-right
@@ -33,7 +33,6 @@ const Screen: React.FC<Props> = ({ isThemeDark }) => {
       </span>
       <span
         className={`
-          ${isThemeDark ? 'text-white' : 'text-amber-400'}
           block
           w-full
           text-right
