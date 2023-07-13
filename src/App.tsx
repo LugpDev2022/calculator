@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import ThemeSwitch from './components/ThemeSwitch';
+import Screen from './components/Screen';
 
 function App() {
   const [isThemeDark, setIsThemeDark] = useState(true);
@@ -37,7 +38,7 @@ function App() {
             items-center
           `}
         >
-          <span className='font-bold text-lg md:text-2xl lg:text-3xl'>
+          <span className='font-bold text-lg sm:text-2xl lg:text-3xl'>
             LugpDev2022
           </span>
 
@@ -46,6 +47,8 @@ function App() {
             handleChange={() => setIsThemeDark(!isThemeDark)}
           />
         </div>
+
+        <Screen isThemeDark={isThemeDark} />
       </main>
     </div>
   );

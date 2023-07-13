@@ -17,8 +17,8 @@ const ThemeSwitch: React.FC<Props> = ({ isThemeDark, handleChange }) => {
         rounded-full
         transition
         w-14
-        md:h-8
-        md:w-[72px]
+        sm:h-8
+        sm:w-[72px]
       `}
     >
       <input

@@ -5,6 +5,7 @@ export default {
     extend: {
       colors: {
         slate: {
+          50: 'rgba(255, 251, 250, 1)',
           400: 'rgb(115, 162, 191)',
           800: 'rgb(33, 49, 64)',
         },
