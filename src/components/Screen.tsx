@@ -1,10 +1,13 @@
 interface Props {
   isThemeDark: boolean;
+  calcState: {
+    operation: string;
+    result: number;
+  };
 }
 
-const Screen: React.FC<Props> = ({ isThemeDark }) => {
-  const operation = '(5+7)x2021';
-  const result = '24,252';
+const Screen: React.FC<Props> = ({ isThemeDark, calcState }) => {
+  const { operation, result } = calcState;
 
   const containerStyle = `
     bg-${isThemeDark ? 'slate-400' : 'slate-50'}
@@ -24,6 +27,8 @@ const Screen: React.FC<Props> = ({ isThemeDark }) => {
     font-semibold
     text-sm
     sm:text-lg
+    min-h-[20px]
+    sm:min-h-[28px]
   `;
 
   const resultStyle = `
@@ -39,7 +44,7 @@ const Screen: React.FC<Props> = ({ isThemeDark }) => {
   return (
     <div className={containerStyle}>
       <span className={operationStyle}>{operation}</span>
-      <span className={resultStyle}>{result}</span>
+      <span className={resultStyle}>{result.toLocaleString('en-US')}</span>
     </div>
   );
 };

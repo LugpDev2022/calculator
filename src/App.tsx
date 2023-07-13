@@ -6,6 +6,10 @@ import ButtonsGrid from './components/ButtonsGrid';
 
 function App() {
   const [isThemeDark, setIsThemeDark] = useState(true);
+  const [calcState, setCalcState] = useState({
+    operation: '', //(5+7)x2021
+    result: 0, //24252
+  });
 
   const backgroundColor = isThemeDark ? '[#0A0B0D]' : 'white';
   const mainBackgroundColor = isThemeDark ? 'slate-800' : 'yellow-200';
@@ -30,7 +34,7 @@ function App() {
           </span>
           <ThemeSwitch isThemeDark={isThemeDark} handleChange={toggleTheme} />
         </div>
-        <Screen isThemeDark={isThemeDark} />
+        <Screen isThemeDark={isThemeDark} calcState={calcState} />
         <ButtonsGrid isThemeDark={isThemeDark} />
       </main>
     </div>
