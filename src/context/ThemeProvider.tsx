@@ -1,17 +1,15 @@
 import { useState } from 'react';
 import { ThemeContext } from './ThemeContext';
 
-export type Theme = 'dark' | 'light';
-
 interface Props {
   children: React.ReactNode;
 }
 
 const ThemeProvider: React.FC<Props> = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>('dark');
+  const [isThemeDark, setIsThemeDark] = useState(true);
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
+    <ThemeContext.Provider value={{ isThemeDark, setIsThemeDark }}>
       {children}
     </ThemeContext.Provider>
   );

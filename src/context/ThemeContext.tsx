@@ -1,9 +1,8 @@
 import { Dispatch, SetStateAction, createContext } from 'react';
-import { Theme } from './ThemeProvider';
 
 export type ContextValue = {
-  theme: Theme;
-  setTheme: Dispatch<SetStateAction<Theme>>;
+  isThemeDark: boolean;
+  setIsThemeDark: Dispatch<SetStateAction<boolean>>;
 };
 
 export const ThemeContext = createContext<ContextValue | null>(null);
