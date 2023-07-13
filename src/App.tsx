@@ -1,9 +1,9 @@
-import { useContext } from 'react';
-import { ContextValue, ThemeContext } from './context/ThemeContext';
+import { useState } from 'react';
+
 import ThemeSwitch from './components/ThemeSwitch';
 
 function App() {
-  const { isThemeDark } = useContext(ThemeContext) as ContextValue;
+  const [isThemeDark, setIsThemeDark] = useState(true);
 
   return (
     <div
@@ -41,7 +41,10 @@ function App() {
             LugpDev2022
           </span>
 
-          <ThemeSwitch />
+          <ThemeSwitch
+            isThemeDark={isThemeDark}
+            handleChange={() => setIsThemeDark(!isThemeDark)}
+          />
         </div>
       </main>
     </div>

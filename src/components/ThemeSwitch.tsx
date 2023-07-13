@@ -1,13 +1,12 @@
-import { useContext } from 'react';
-import { ContextValue, ThemeContext } from '../context/ThemeContext';
 import sun from '/sun.png';
 import moon from '/moon.png';
 
-const ThemeSwitch = () => {
-  const { isThemeDark, setIsThemeDark } = useContext(
-    ThemeContext
-  ) as ContextValue;
+interface Props {
+  isThemeDark: boolean;
+  handleChange: () => void;
+}
 
+const ThemeSwitch: React.FC<Props> = ({ isThemeDark, handleChange }) => {
   return (
     <label
       className={`
@@ -25,7 +24,7 @@ const ThemeSwitch = () => {
       <input
         type='checkbox'
         className='sr-only peer'
-        onClick={() => setIsThemeDark(() => !isThemeDark)}
+        onClick={handleChange}
         checked={!isThemeDark}
       />
       <img
