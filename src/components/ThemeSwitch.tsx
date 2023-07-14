@@ -44,10 +44,10 @@ const ThemeSwitch: React.FC<Props> = ({ isThemeDark, handleChange }) => {
     h-[calc(100%-4px)]
     left-0.5
     peer-checked:left-[32.5px]
+    sm:peer-checked:left-[40.5px]
     rounded-full
     top-0.5
     transition-all
-    md:peer-checked:left-[40.5px]
   `;
 
   return (
