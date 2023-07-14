@@ -10,13 +10,11 @@ const ThemeSwitch: React.FC<Props> = ({ isThemeDark, handleChange }) => {
   const switchContainerStyle = `
     ${isThemeDark ? 'bg-[#0A0B0D]' : 'bg-white'}
     cursor-pointer
-    h-6
     relative
     rounded-full
     transition
-    w-14
-    sm:h-8
-    sm:w-[72px]
+    h-8
+    w-[72px]
   `;
 
   const switchInputStyle = 'sr-only peer';
@@ -43,8 +41,7 @@ const ThemeSwitch: React.FC<Props> = ({ isThemeDark, handleChange }) => {
     duration-500
     h-[calc(100%-4px)]
     left-0.5
-    peer-checked:left-[32.5px]
-    sm:peer-checked:left-[40.5px]
+    peer-checked:left-[40.5px]
     rounded-full
     top-0.5
     transition-all

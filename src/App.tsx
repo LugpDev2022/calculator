@@ -37,9 +37,7 @@ function App() {
         <div
           className={`flex justify-between items-center ${logoColor} transition`}
         >
-          <span className='font-bold text-lg sm:text-2xl lg:text-3xl'>
-            LugpDev2022
-          </span>
+          <span className='font-bold text-2xl lg:text-3xl'>LugpDev2022</span>
           <ThemeSwitch isThemeDark={isThemeDark} handleChange={toggleTheme} />
         </div>
 
