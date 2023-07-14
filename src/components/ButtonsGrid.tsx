@@ -1,5 +1,6 @@
 import { Dispatch, SetStateAction } from 'react';
 import Button from './Button';
+import evaluateOperation from '../helpers/evaluateOperation';
 
 type SetCalcState = Dispatch<
   SetStateAction<{
@@ -13,15 +14,15 @@ interface Props {
   setCalcState: SetCalcState;
 }
 
-const ButtonsGrid: React.FC<Props> = ({ isThemeDark, setCalcState }) => {
-  const buttonData = [
-    ['(', ')', 'DEL', 'AC'],
-    ['7', '8', '9', '÷'],
-    ['4', '5', '6', '×'],
-    ['1', '2', '3', '+'],
-    ['0', '.', '=', '-'],
-  ];
+const buttonData = [
+  ['(', ')', 'DEL', 'AC'],
+  ['7', '8', '9', '÷'],
+  ['4', '5', '6', '×'],
+  ['1', '2', '3', '+'],
+  ['0', '.', '=', '-'],
+];
 
+const ButtonsGrid: React.FC<Props> = ({ isThemeDark, setCalcState }) => {
   const handleClick = ({ target }: any) => {
     const key = target.innerHTML;
 
@@ -33,14 +34,19 @@ const ButtonsGrid: React.FC<Props> = ({ isThemeDark, setCalcState }) => {
 
     if (key === 'AC') return setCalcState({ operation: '', result: 0 });
 
-    if (key === '=')
-      return setCalcState((state) => {
-        console.log(Number('(2)(2)'));
+    if (key === '=') {
+      setCalcState((state) => {
+        const { isValid, result } = evaluateOperation(state.operation);
+
+        if (!isValid) return state;
 
         return {
           ...state,
+          result,
         };
       });
+      return;
+    }
 
     setCalcState((state) => ({
       ...state,

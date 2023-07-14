@@ -43,7 +43,7 @@ const Screen: React.FC<Props> = ({ isThemeDark, calcState }) => {
 
   return (
     <div className={containerStyle}>
-      <span className={operationStyle}>{operation}</span>
+      <span className={operationStyle}>{operation ? operation : '0'}</span>
       <span className={resultStyle}>{result.toLocaleString('en-US')}</span>
     </div>
   );
