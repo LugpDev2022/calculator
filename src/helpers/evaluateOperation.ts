@@ -1,4 +1,4 @@
-type Response = { isValid: boolean; result: number };
+type Response = { isValid: boolean; result: number; error: string };
 
 //TODO: Handle error
 const evaluateOperation = (operation: string): Response => {
@@ -10,15 +10,20 @@ const evaluateOperation = (operation: string): Response => {
 
     const result = eval(standardNotation);
 
+    if (isNaN(result)) {
+      throw new Error('Invalid operation');
+    }
+
     return {
       isValid: true,
       result,
+      error: '',
     };
   } catch (e: any) {
-    console.log(e.message);
     return {
       isValid: false,
       result: 0,
+      error: e.message,
     };
   }
 };
