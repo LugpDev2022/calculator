@@ -1,12 +1,13 @@
 import { useReducer, useState } from 'react';
 
+import getTheme from './helpers/getTheme';
 import ThemeSwitch from './components/ThemeSwitch';
 import Screen from './components/Screen';
 import ButtonsGrid from './components/ButtonsGrid';
 import { calculatorReducer } from './calculatorReducer';
 
 function App() {
-  const [isThemeDark, setIsThemeDark] = useState(true);
+  const [isThemeDark, setIsThemeDark] = useState(getTheme());
   const [calcState, dispatch] = useReducer(calculatorReducer, {
     operation: '',
     result: 0,
@@ -18,6 +19,11 @@ function App() {
   const logoColor = isThemeDark ? 'text-[#91C4D9]' : 'text-amber-400';
 
   const toggleTheme = () => {
+    if (isThemeDark) {
+      localStorage.setItem('calculatorTheme', 'light');
+    } else {
+      localStorage.setItem('calculatorTheme', 'dark');
+    }
     setIsThemeDark(!isThemeDark);
   };
 
