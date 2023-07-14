@@ -19,10 +19,10 @@ const evaluateOperation = (operation: string): Response => {
       result,
       error: '',
     };
-  } catch (e: any) {
+  } catch (e) {
     return {
       result: 0,
-      error: e.message,
+      error: 'Invalid operation',
     };
   }
 };
