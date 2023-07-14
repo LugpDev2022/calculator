@@ -24,8 +24,7 @@ const Screen: React.FC<Props> = ({ isThemeDark, calcState }) => {
     w-full
     text-right
     font-semibold
-    text-sm
-    sm:text-lg
+    text-lg
     min-h-[20px]
     sm:min-h-[28px]
   `;
@@ -35,7 +34,7 @@ const Screen: React.FC<Props> = ({ isThemeDark, calcState }) => {
     block
     w-full
     text-right
-    text-xl
+    text-2xl
     sm:text-4xl
     font-bold
   `;
