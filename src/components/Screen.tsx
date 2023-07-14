@@ -1,13 +1,12 @@
+import { CalcState } from '../calculatorReducer';
+
 interface Props {
   isThemeDark: boolean;
-  calcState: {
-    operation: string;
-    result: number;
-  };
+  calcState: CalcState;
 }
 
 const Screen: React.FC<Props> = ({ isThemeDark, calcState }) => {
-  const { operation, result } = calcState;
+  const { operation, result, error } = calcState;
 
   const containerStyle = `
     ${isThemeDark ? 'bg-slate-400' : 'bg-slate-50'}
@@ -44,7 +43,9 @@ const Screen: React.FC<Props> = ({ isThemeDark, calcState }) => {
   return (
     <div className={containerStyle}>
       <span className={operationStyle}>{operation ? operation : '0'}</span>
-      <span className={resultStyle}>{result.toLocaleString('en-US')}</span>
+      <span className={resultStyle}>
+        {error ? error : result.toLocaleString('en-US')}
+      </span>
     </div>
   );
 };

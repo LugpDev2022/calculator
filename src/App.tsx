@@ -1,14 +1,16 @@
-import { useState } from 'react';
+import { useReducer, useState } from 'react';
 
 import ThemeSwitch from './components/ThemeSwitch';
 import Screen from './components/Screen';
 import ButtonsGrid from './components/ButtonsGrid';
+import { calculatorReducer } from './calculatorReducer';
 
 function App() {
   const [isThemeDark, setIsThemeDark] = useState(true);
-  const [calcState, setCalcState] = useState({
-    operation: '', //(5+7)x2021
-    result: 0, //24252
+  const [calcState, dispatch] = useReducer(calculatorReducer, {
+    operation: '',
+    result: 0,
+    error: '',
   });
 
   const backgroundColor = isThemeDark ? 'bg-[#0A0B0D]' : 'bg-white';
@@ -34,8 +36,13 @@ function App() {
           </span>
           <ThemeSwitch isThemeDark={isThemeDark} handleChange={toggleTheme} />
         </div>
+
         <Screen isThemeDark={isThemeDark} calcState={calcState} />
-        <ButtonsGrid isThemeDark={isThemeDark} setCalcState={setCalcState} />
+        <ButtonsGrid
+          isThemeDark={isThemeDark}
+          dispatch={dispatch}
+          operation={calcState.operation}
+        />
       </main>
     </div>
   );

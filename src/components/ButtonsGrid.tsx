@@ -1,17 +1,12 @@
-import { Dispatch, SetStateAction } from 'react';
-import Button from './Button';
+import { Dispatch } from 'react';
+import { CalcAction, CalcState } from '../calculatorReducer';
 import evaluateOperation from '../helpers/evaluateOperation';
-
-type SetCalcState = Dispatch<
-  SetStateAction<{
-    operation: string;
-    result: number;
-  }>
->;
+import Button from './Button';
 
 interface Props {
   isThemeDark: boolean;
-  setCalcState: SetCalcState;
+  dispatch: Dispatch<CalcAction>;
+  operation: string;
 }
 
 const buttonData = [
@@ -22,36 +17,25 @@ const buttonData = [
   ['0', '.', '=', '-'],
 ];
 
-const ButtonsGrid: React.FC<Props> = ({ isThemeDark, setCalcState }) => {
+const ButtonsGrid: React.FC<Props> = ({ isThemeDark, dispatch, operation }) => {
   const handleClick = ({ target }: any) => {
     const key = target.innerHTML;
 
-    if (key === 'DEL')
-      return setCalcState((state) => ({
-        ...state,
-        operation: state.operation.slice(0, -1),
-      }));
+    if (key === 'DEL') return dispatch({ type: 'DELETE' });
 
-    if (key === 'AC') return setCalcState({ operation: '', result: 0 });
+    if (key === 'AC') return dispatch({ type: 'RESET' });
 
     if (key === '=') {
-      setCalcState((state) => {
-        const { isValid, result } = evaluateOperation(state.operation);
+      const { result, error } = evaluateOperation(operation);
 
-        if (!isValid) return state;
+      if (error) return dispatch({ type: 'SET_ERROR', payload: error });
 
-        return {
-          ...state,
-          result,
-        };
-      });
+      dispatch({ type: 'SET_RESULT', payload: result });
+
       return;
     }
 
-    setCalcState((state) => ({
-      ...state,
-      operation: state.operation + key,
-    }));
+    dispatch({ type: 'SET_OPERATION', payload: key });
   };
 
   return (
