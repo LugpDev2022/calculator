@@ -10,7 +10,7 @@ const Screen: React.FC<Props> = ({ isThemeDark, calcState }) => {
   const { operation, result } = calcState;
 
   const containerStyle = `
-    bg-${isThemeDark ? 'slate-400' : 'slate-50'}
+    ${isThemeDark ? 'bg-slate-400' : 'bg-slate-50'}
     my-5
     rounded-2xl
     w-full
@@ -20,7 +20,7 @@ const Screen: React.FC<Props> = ({ isThemeDark, calcState }) => {
   `;
 
   const operationStyle = `
-    text-${isThemeDark ? 'white/60' : 'amber-400/60'}
+    ${isThemeDark ? 'text-white/60' : 'text-amber-400/60'}
     block
     w-full
     text-right
@@ -32,7 +32,7 @@ const Screen: React.FC<Props> = ({ isThemeDark, calcState }) => {
   `;
 
   const resultStyle = `
-    text-${isThemeDark ? 'white' : 'amber-400'}
+    ${isThemeDark ? 'text-white' : 'text-amber-400'}
     block
     w-full
     text-right

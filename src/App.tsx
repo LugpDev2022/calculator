@@ -11,9 +11,9 @@ function App() {
     result: 0, //24252
   });
 
-  const backgroundColor = isThemeDark ? '[#0A0B0D]' : 'white';
-  const mainBackgroundColor = isThemeDark ? 'slate-800' : 'yellow-200';
-  const logoColor = isThemeDark ? '[#91C4D9]' : 'amber-400';
+  const backgroundColor = isThemeDark ? 'bg-[#0A0B0D]' : 'bg-white';
+  const mainBackgroundColor = isThemeDark ? 'bg-slate-800' : 'bg-yellow-200';
+  const logoColor = isThemeDark ? 'text-[#91C4D9]' : 'text-amber-400';
 
   const toggleTheme = () => {
     setIsThemeDark(!isThemeDark);
@@ -21,13 +21,13 @@ function App() {
 
   return (
     <div
-      className={`bg-${backgroundColor} h-full w-full flex justify-center items-center transition`}
+      className={`${backgroundColor} h-full w-full flex justify-center items-center transition`}
     >
       <main
-        className={`bg-${mainBackgroundColor} w-[90%] max-w-lg p-5 rounded-2xl transition`}
+        className={`${mainBackgroundColor} w-[90%] max-w-lg p-5 rounded-2xl transition`}
       >
         <div
-          className={`flex justify-between items-center text-${logoColor} transition`}
+          className={`flex justify-between items-center ${logoColor} transition`}
         >
           <span className='font-bold text-lg sm:text-2xl lg:text-3xl'>
             LugpDev2022
@@ -35,7 +35,7 @@ function App() {
           <ThemeSwitch isThemeDark={isThemeDark} handleChange={toggleTheme} />
         </div>
         <Screen isThemeDark={isThemeDark} calcState={calcState} />
-        <ButtonsGrid isThemeDark={isThemeDark} />
+        <ButtonsGrid isThemeDark={isThemeDark} setCalcState={setCalcState} />
       </main>
     </div>
   );

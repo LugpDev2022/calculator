@@ -1,13 +1,14 @@
 interface Props {
   isThemeDark: boolean;
   children: React.ReactNode;
+  handleClick: (e: any) => void;
 }
 
-const Button: React.FC<Props> = ({ children, isThemeDark }) => {
+const Button: React.FC<Props> = ({ children, isThemeDark, handleClick }) => {
   const buttonStyle = `
-    bg-${isThemeDark ? 'slate-400' : 'slate-50'}
-    hover:bg-${isThemeDark ? '[#446478]' : '[#DFEA68]'}
-    text-${isThemeDark ? 'white' : 'amber-400'}
+    ${isThemeDark ? 'bg-slate-400' : 'bg-slate-50'}
+    ${isThemeDark ? 'hover:bg-[#446478]' : 'hover:bg-[#DFEA68]'}
+    ${isThemeDark ? 'text-white' : 'text-amber-400'}
     py-2
     rounded-lg
     sm:py-4
@@ -15,10 +16,6 @@ const Button: React.FC<Props> = ({ children, isThemeDark }) => {
     text-3xl
     transition
   `;
-
-  const handleClick = () => {
-    console.log('click');
-  };
 
   return (
     <button onClick={handleClick} className={buttonStyle}>

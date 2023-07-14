@@ -8,7 +8,7 @@ interface Props {
 
 const ThemeSwitch: React.FC<Props> = ({ isThemeDark, handleChange }) => {
   const switchContainerStyle = `
-    bg-${isThemeDark ? '[#0A0B0D]' : 'white'}
+    ${isThemeDark ? 'bg-[#0A0B0D]' : 'bg-white'}
     cursor-pointer
     h-6
     relative
