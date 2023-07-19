@@ -23,7 +23,6 @@ const Button: React.FC<Props> = ({
     sm:py-4
     font-bold
     text-3xl
-    transition
   `;
 
   const handleClick = ({ target }: any) => {

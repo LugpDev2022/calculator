@@ -10,3 +10,33 @@
 * {
   font-family: Inter;
 }
+
+div,
+main,
+button {
+  @apply transition;
+}
+
+.dark-theme {
+  background-color: #0a0b0d;
+}
+
+.dark-theme main {
+  background-color: #213140;
+}
+
+.dark-theme #Logo {
+  color: #91c4d9;
+}
+
+.light-theme {
+  background-color: white;
+}
+
+.light-theme main {
+  background-color: #dbf991;
+}
+
+.light-theme #Logo {
+  color: #9c8f13;
+}

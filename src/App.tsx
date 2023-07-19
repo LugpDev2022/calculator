@@ -14,10 +14,6 @@ function App() {
     error: '',
   });
 
-  const backgroundColor = isThemeDark ? 'bg-[#0A0B0D]' : 'bg-white';
-  const mainBackgroundColor = isThemeDark ? 'bg-slate-800' : 'bg-yellow-200';
-  const logoColor = isThemeDark ? 'text-[#91C4D9]' : 'text-amber-400';
-
   const toggleTheme = () => {
     if (isThemeDark) {
       localStorage.setItem('calculatorTheme', 'light');
@@ -29,14 +25,17 @@ function App() {
 
   return (
     <div
-      className={`${backgroundColor} h-full w-full flex justify-center items-center transition`}
+      className={`
+        ${isThemeDark ? 'dark' : 'light'}-theme
+        flex
+        h-full
+        items-center
+        justify-center
+        w-full
+      `}
     >
-      <main
-        className={`${mainBackgroundColor} w-[90%] max-w-lg p-5 rounded-2xl transition`}
-      >
-        <div
-          className={`flex justify-between items-center ${logoColor} transition`}
-        >
+      <main className='w-[90%] max-w-lg p-5 rounded-2xl'>
+        <div className='flex justify-between items-center' id='Logo'>
           <span className='font-bold text-2xl lg:text-3xl'>LugpDev2022</span>
           <ThemeSwitch isThemeDark={isThemeDark} handleChange={toggleTheme} />
         </div>
