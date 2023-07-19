@@ -1,7 +1,8 @@
 import { CalcState } from '../calculatorReducer';
+import ResultDisplay from './ResultDisplay';
 
 interface Props {
-  isThemeDark: boolean;
+  isThemeDark?: boolean;
   calcState: CalcState;
 }
 
@@ -11,40 +12,29 @@ const Screen: React.FC<Props> = ({ isThemeDark, calcState }) => {
   const containerStyle = `
     ${isThemeDark ? 'bg-slate-400' : 'bg-slate-50'}
     my-5
-    rounded-2xl
-    w-full
+    overflow-hidden
     px-5
     py-2
+    rounded-2xl
     transition
+    w-full
   `;
 
   const operationStyle = `
     ${isThemeDark ? 'text-white/60' : 'text-amber-400/60'}
     block
-    w-full
-    text-right
     font-semibold
-    text-lg
     min-h-[20px]
-    sm:min-h-[28px]
-  `;
-
-  const resultStyle = `
-    ${isThemeDark ? 'text-white' : 'text-amber-400'}
-    block
-    w-full
+    text-lg
     text-right
-    text-2xl
-    sm:text-4xl
-    font-bold
+    w-full
+    sm:min-h-[28px]
   `;
 
   return (
     <div className={containerStyle}>
       <span className={operationStyle}>{operation ? operation : '0'}</span>
-      <span className={resultStyle}>
-        {error ? error : result.toLocaleString('en-US')}
-      </span>
+      <ResultDisplay error={error} isThemeDark={isThemeDark} result={result} />
     </div>
   );
 };
