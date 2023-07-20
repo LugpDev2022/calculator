@@ -1,15 +1,19 @@
-type Response = { result: number; error: string };
+import parseOperation from './parseOperation';
+
+type Response = { result: number | null; error: string };
 
 const evaluateOperation = (operation: string): Response => {
   try {
-    const standardNotation = operation
-      .replace(/×/g, '*')
-      .replace(/÷/g, '/')
-      .replace(/\)\(/g, ')*(')
-      .replace(/(\d)\(/g, '$1*(')
-      .replace(/\)(\d)/g, ')*$1');
+    const standardNotation = parseOperation(operation);
 
-    const result = eval(standardNotation);
+    const result = Function(`return (${standardNotation})`)();
+
+    if (!isFinite(result)) {
+      return {
+        result: Infinity,
+        error: '',
+      };
+    }
 
     if (isNaN(result)) {
       throw new Error('Invalid operation');
@@ -21,7 +25,7 @@ const evaluateOperation = (operation: string): Response => {
     };
   } catch (e) {
     return {
-      result: 0,
+      result: null,
       error: 'Invalid operation',
     };
   }
