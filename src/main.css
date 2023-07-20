@@ -29,7 +29,7 @@ button {
   color: #91c4d9;
 }
 
-.dark-theme #Switch-Container {
+.dark-theme .switch-container {
   background-color: #0a0b0d;
 }
 
@@ -45,6 +45,6 @@ button {
   color: #9c8f13;
 }
 
-.light-theme #Switch-Container {
+.light-theme .switch-container {
   background-color: white;
 }

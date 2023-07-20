@@ -3,8 +3,8 @@
 exports[`Tests on <ThemeSwitch /> > should match snapshot 1`] = `
 <div>
   <label
-    class=" cursor-pointer relative rounded-full transition h-8 w-[72px] "
-    id="Switch-Container"
+    class=" switch-container cursor-pointer relative rounded-full transition h-8 w-[72px] "
+    data-testid="switch-container"
   >
     <input
       checked=""

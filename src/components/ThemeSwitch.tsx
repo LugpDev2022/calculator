@@ -15,8 +15,9 @@ const ThemeSwitch: React.FC<Props> = ({ isThemeDark, handleChange }) => {
 
   return (
     <label
-      id='Switch-Container'
+      data-testid='switch-container'
       className='
+        switch-container
         cursor-pointer
         relative
         rounded-full

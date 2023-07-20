@@ -16,7 +16,8 @@ describe('Tests on <ThemeSwitch />', () => {
   test('should call handleChange on click', () => {
     const handleChange = vi.fn();
     render(<ThemeSwitch handleChange={handleChange} />);
-    const themeSwitch: any = document.getElementById('Switch-Container');
+
+    const themeSwitch = screen.getByTestId('switch-container');
     fireEvent.click(themeSwitch);
 
     expect(handleChange).toHaveBeenCalledTimes(1);
