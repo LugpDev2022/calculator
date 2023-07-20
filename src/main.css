@@ -29,6 +29,10 @@ button {
   color: #91c4d9;
 }
 
+.dark-theme #Switch-Container {
+  background-color: #0a0b0d;
+}
+
 .light-theme {
   background-color: white;
 }
@@ -39,4 +43,8 @@ button {
 
 .light-theme #Logo {
   color: #9c8f13;
+}
+
+.light-theme #Switch-Container {
+  background-color: white;
 }

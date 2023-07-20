@@ -1,0 +1,37 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Tests on <ThemeSwitch /> > should match snapshot 1`] = `
+<div>
+  <label
+    class=" cursor-pointer relative rounded-full transition h-8 w-[72px] "
+    id="Switch-Container"
+  >
+    <input
+      checked=""
+      class="sr-only peer"
+      type="checkbox"
+    />
+    <img
+      alt="Sun Icon"
+      class="
+    absolute
+    h-[calc(100%-4px)]
+    top-0.5
+   left-0.5"
+      src="/sun.png"
+    />
+    <img
+      alt="Moon Icon"
+      class="
+    absolute
+    h-[calc(100%-4px)]
+    top-0.5
+   right-[3.5px]"
+      src="/moon.png"
+    />
+    <span
+      class=" absolute aspect-square bg-slate-400 peer-checked:bg-amber-400 duration-500 h-[calc(100%-4px)] left-0.5 peer-checked:left-[40.5px] rounded-full top-0.5 transition-all "
+    />
+  </label>
+</div>
+`;
