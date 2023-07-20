@@ -40,7 +40,7 @@ function App() {
           <ThemeSwitch isThemeDark={isThemeDark} handleChange={toggleTheme} />
         </div>
 
-        <Screen isThemeDark={isThemeDark} calcState={calcState} />
+        <Screen calcState={calcState} />
         <ButtonsGrid
           isThemeDark={isThemeDark}
           dispatch={dispatch}

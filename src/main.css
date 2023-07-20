@@ -33,6 +33,15 @@ button {
   background-color: #0a0b0d;
 }
 
+.dark-theme .screen-container {
+  color: white;
+  background-color: #73a2bf;
+}
+
+.dark-theme .screen-container .operation {
+  color: #ffffff99;
+}
+
 .light-theme {
   background-color: white;
 }
@@ -47,4 +56,13 @@ button {
 
 .light-theme .switch-container {
   background-color: white;
+}
+
+.light-theme .screen-container {
+  color: #9c8f13;
+  background-color: #fffbfa;
+}
+
+.light-theme .screen-container .operation {
+  color: #9c8f1399;
 }
