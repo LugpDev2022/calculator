@@ -1,13 +1,13 @@
 import { useReducer, useState } from 'react';
 
-import getTheme from './helpers/getTheme';
+import shouldUseDarkTheme from './helpers/shouldUseDarkTheme';
 import ThemeSwitch from './components/ThemeSwitch';
 import Screen from './components/Screen';
 import ButtonsGrid from './components/ButtonsGrid';
 import { calculatorReducer } from './calculatorReducer';
 
 function App() {
-  const [isThemeDark, setIsThemeDark] = useState(getTheme());
+  const [isThemeDark, setIsThemeDark] = useState(shouldUseDarkTheme());
   const [calcState, dispatch] = useReducer(calculatorReducer, {
     operation: '',
     result: 0,

@@ -1,4 +1,4 @@
-const getTheme = () => {
+const shouldUseDarkTheme = (): boolean => {
   const theme = localStorage.getItem('calculatorTheme');
 
   if (!theme) {
@@ -13,4 +13,4 @@ const getTheme = () => {
   return false;
 };
 
-export default getTheme;
+export default shouldUseDarkTheme;
