@@ -1,8 +1,13 @@
 const convertToScientificNotation = (number: number): string => {
-  const exponent = Math.floor(Math.log10(number));
-  const coefficient = number / Math.pow(10, exponent);
+  if (number === 0) return '0';
 
-  return `${coefficient.toFixed(2)}e${exponent}`;
+  const absNumber = Math.abs(number);
+  const exponent = Math.floor(Math.log10(absNumber));
+  const coefficient = absNumber / Math.pow(10, exponent);
+
+  const sign = number < 0 ? '-' : '';
+
+  return `${sign}${coefficient.toFixed(2)}e${exponent}`;
 };
 
 export default convertToScientificNotation;

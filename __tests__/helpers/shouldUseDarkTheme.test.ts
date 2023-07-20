@@ -1,6 +1,6 @@
 import shouldUseDarkTheme from '../../src/helpers/shouldUseDarkTheme';
 
-describe('Tests on getTheme.ts', () => {
+describe('Tests on shouldUseDarkTheme.ts', () => {
   test('should set dark theme on undefined', () => {
     localStorage.clear();
 

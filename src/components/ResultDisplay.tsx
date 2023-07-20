@@ -19,7 +19,7 @@ const ResultDisplay: React.FC<Props> = ({ result, error, isThemeDark }) => {
 
   const displayedResult = error
     ? error
-    : result >= 10000000000000
+    : Math.abs(result) >= 10000000000000
     ? convertToScientificNotation(result)
     : result.toLocaleString('en-US');
 
