@@ -20,16 +20,15 @@ describe('Tests on <ResultDisplay />', () => {
   });
 
   test('should display the result', () => {
-    (formatResult as jest.Mock).mockReturnValue('1057');
+    const mockedValue = '1057';
+    (formatResult as jest.Mock).mockReturnValue(mockedValue);
 
     render(<ResultDisplay result={1057} />);
 
-    expect(screen.getByText('1057')).toBeTruthy();
+    expect(screen.getByText(mockedValue)).toBeTruthy();
   });
 
   test('should call formatResult() without error', () => {
-    (formatResult as jest.Mock).mockReturnValue('1057');
-
     const result = 1057;
 
     render(<ResultDisplay result={result} />);
@@ -38,8 +37,6 @@ describe('Tests on <ResultDisplay />', () => {
   });
 
   test('should call formatResult() with the given error', () => {
-    (formatResult as jest.Mock).mockReturnValue('1057');
-
     const result = 1057;
     const error = 'Invalid Operation';
 

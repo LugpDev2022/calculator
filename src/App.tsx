@@ -41,11 +41,7 @@ function App() {
         </div>
 
         <Screen calcState={calcState} />
-        <ButtonsGrid
-          isThemeDark={isThemeDark}
-          dispatch={dispatch}
-          operation={calcState.operation}
-        />
+        <ButtonsGrid dispatch={dispatch} operation={calcState.operation} />
       </main>
     </div>
   );

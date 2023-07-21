@@ -19,30 +19,27 @@ export const calculatorReducer = (
 
     case 'DELETE':
       return {
-        result: state.result,
+        ...state,
         operation: state.operation.slice(0, -1),
-        error: '',
       };
 
     case 'SET_RESULT':
       return {
-        operation: state.operation,
+        ...state,
         result: payload,
         error: '',
       };
 
     case 'SET_ERROR':
       return {
-        operation: state.operation,
-        result: state.result,
+        ...state,
         error: payload,
       };
 
     case 'SET_OPERATION':
       return {
-        result: state.result,
+        ...state,
         operation: state.operation + payload,
-        error: '',
       };
 
     default:
