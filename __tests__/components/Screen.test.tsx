@@ -15,7 +15,7 @@ vi.mock('../../src/components/ResultDisplay', () => ({
 
 describe('Tests on <Screen />', () => {
   const contextValue: CalcStateContextType = {
-    dispatch: vi.fn(),
+    dispatch: () => {},
     error: '',
     operation: '2+2',
     result: 10,
