@@ -7,9 +7,7 @@ import {
 } from '../context/CalcStateContext';
 
 const Screen = () => {
-  const { operation, result, error } = useContext(
-    CalcStateContext
-  ) as CalcStateContextType;
+  const { operation } = useContext(CalcStateContext) as CalcStateContextType;
 
   return (
     <div
@@ -38,7 +36,7 @@ const Screen = () => {
       >
         {operation ? operation : '0'}
       </span>
-      <ResultDisplay error={error} result={result} />
+      <ResultDisplay />
     </div>
   );
 };

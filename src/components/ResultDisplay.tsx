@@ -1,11 +1,14 @@
+import { useContext } from 'react';
 import formatResult from '../helpers/formatResult';
+import {
+  CalcStateContext,
+  CalcStateContextType,
+} from '../context/CalcStateContext';
 
-interface Props {
-  error?: string;
-  result: number;
-}
+const ResultDisplay = () => {
+  const calcState = useContext(CalcStateContext) as CalcStateContextType;
+  const { result, error } = calcState;
 
-const ResultDisplay: React.FC<Props> = ({ result, error = '' }) => {
   const displayedResult = formatResult(result, error);
 
   return (

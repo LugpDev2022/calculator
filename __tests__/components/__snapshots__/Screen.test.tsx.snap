@@ -1,0 +1,18 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Tests on <Screen /> > should match snapshot  1`] = `
+<div>
+  <div
+    class=" screen-container my-5 overflow-hidden px-5 py-2 rounded-2xl w-full "
+  >
+    <span
+      class=" operation block font-semibold min-h-[20px] text-lg text-right w-full sm:min-h-[28px] transition "
+    >
+      2+2
+    </span>
+    <span>
+      5
+    </span>
+  </div>
+</div>
+`;

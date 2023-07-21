@@ -10,9 +10,8 @@ interface Props {
 }
 
 const Button: React.FC<Props> = ({ keySign }) => {
-  const { dispatch, operation } = useContext(
-    CalcStateContext
-  ) as CalcStateContextType;
+  const calcState = useContext(CalcStateContext) as CalcStateContextType;
+  const { dispatch, operation } = calcState;
 
   const handleClick = () => {
     if (keySign === 'DEL') return dispatch({ type: 'DELETE' });

@@ -25,7 +25,7 @@ describe('Tests on <ResultDisplay />', () => {
 
     render(<ResultDisplay result={1057} />);
 
-    expect(screen.getByText(mockedValue)).toBeTruthy();
+    expect(screen.queryByText(mockedValue)).toBeTruthy();
   });
 
   test('should call formatResult() without error', () => {
