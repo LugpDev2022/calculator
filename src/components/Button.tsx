@@ -1,14 +1,19 @@
-import { Dispatch } from 'react';
+import { useContext } from 'react';
 import evaluateOperation from '../helpers/evaluateOperation';
-import { CalcAction } from '../calculatorReducer';
+import {
+  CalcStateContext,
+  CalcStateContextType,
+} from '../context/CalcStateContext';
 
 interface Props {
-  dispatch: Dispatch<CalcAction>;
-  operation: string;
   keySign: string;
 }
 
-const Button: React.FC<Props> = ({ dispatch, operation, keySign }) => {
+const Button: React.FC<Props> = ({ keySign }) => {
+  const { dispatch, operation } = useContext(
+    CalcStateContext
+  ) as CalcStateContextType;
+
   const handleClick = () => {
     if (keySign === 'DEL') return dispatch({ type: 'DELETE' });
 

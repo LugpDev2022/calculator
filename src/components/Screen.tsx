@@ -1,12 +1,15 @@
-import { CalcState } from '../calculatorReducer';
+import { useContext } from 'react';
+
 import ResultDisplay from './ResultDisplay';
+import {
+  CalcStateContextType,
+  CalcStateContext,
+} from '../context/CalcStateContext';
 
-interface Props {
-  calcState: CalcState;
-}
-
-const Screen: React.FC<Props> = ({ calcState }) => {
-  const { operation, result, error } = calcState;
+const Screen = () => {
+  const { operation, result, error } = useContext(
+    CalcStateContext
+  ) as CalcStateContextType;
 
   return (
     <div

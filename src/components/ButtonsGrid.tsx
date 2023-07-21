@@ -1,11 +1,4 @@
-import { Dispatch } from 'react';
-import { CalcAction } from '../calculatorReducer';
 import Button from './Button';
-
-interface Props {
-  dispatch: Dispatch<CalcAction>;
-  operation: string;
-}
 
 const buttonData = [
   ['(', ')', 'DEL', 'AC'],
@@ -15,17 +8,12 @@ const buttonData = [
   ['0', '.', '=', '-'],
 ];
 
-const ButtonsGrid: React.FC<Props> = ({ dispatch, operation }) => {
+const ButtonsGrid = () => {
   return (
     <div className='grid grid-cols-4 gap-2'>
       {buttonData.map((row) =>
         row.map((buttonText) => (
-          <Button
-            key={buttonText}
-            operation={operation}
-            dispatch={dispatch}
-            keySign={buttonText}
-          />
+          <Button key={buttonText} keySign={buttonText} />
         ))
       )}
     </div>
