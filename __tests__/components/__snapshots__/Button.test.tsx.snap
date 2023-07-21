@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Tests on <Button /> > should match snapshot 1`] = `
+<div>
+  <button
+    class=" calculator-btn py-2 rounded-lg sm:py-4 font-bold text-3xl "
+  >
+    DEL
+  </button>
+</div>
+`;

@@ -1,38 +1,20 @@
 import { Dispatch } from 'react';
 import evaluateOperation from '../helpers/evaluateOperation';
 import { CalcAction } from '../calculatorReducer';
+
 interface Props {
-  isThemeDark: boolean;
-  children: React.ReactNode;
   dispatch: Dispatch<CalcAction>;
   operation: string;
+  keySign: string;
 }
 
-const Button: React.FC<Props> = ({
-  children,
-  isThemeDark,
-  dispatch,
-  operation,
-}) => {
-  const buttonStyle = `
-    ${isThemeDark ? 'bg-slate-400' : 'bg-slate-50'}
-    ${isThemeDark ? 'hover:bg-[#446478]' : 'hover:bg-[#DFEA68]'}
-    ${isThemeDark ? 'text-white' : 'text-amber-400'}
-    py-2
-    rounded-lg
-    sm:py-4
-    font-bold
-    text-3xl
-  `;
+const Button: React.FC<Props> = ({ dispatch, operation, keySign }) => {
+  const handleClick = () => {
+    if (keySign === 'DEL') return dispatch({ type: 'DELETE' });
 
-  const handleClick = ({ target }: any) => {
-    const key = target.innerHTML;
+    if (keySign === 'AC') return dispatch({ type: 'RESET' });
 
-    if (key === 'DEL') return dispatch({ type: 'DELETE' });
-
-    if (key === 'AC') return dispatch({ type: 'RESET' });
-
-    if (key === '=') {
+    if (keySign === '=') {
       const { result, error } = evaluateOperation(operation);
 
       if (error) return dispatch({ type: 'SET_ERROR', payload: error });
@@ -44,12 +26,22 @@ const Button: React.FC<Props> = ({
 
     if (operation.length > 18) return;
 
-    dispatch({ type: 'SET_OPERATION', payload: key });
+    dispatch({ type: 'SET_OPERATION', payload: keySign });
   };
 
   return (
-    <button onClick={handleClick} className={buttonStyle}>
-      {children}
+    <button
+      onClick={handleClick}
+      className='
+        calculator-btn
+        py-2
+        rounded-lg
+        sm:py-4
+        font-bold
+        text-3xl
+      '
+    >
+      {keySign}
     </button>
   );
 };

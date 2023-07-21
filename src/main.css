@@ -42,6 +42,15 @@ button {
   color: #ffffff99;
 }
 
+.dark-theme .calculator-btn {
+  background-color: #73a2bf;
+  color: white;
+}
+
+.dark-theme .calculator-btn:hover {
+  background-color: #446478;
+}
+
 .light-theme {
   background-color: white;
 }
@@ -65,4 +74,13 @@ button {
 
 .light-theme .screen-container .operation {
   color: #9c8f1399;
+}
+
+.light-theme .calculator-btn {
+  background-color: #fffbfa;
+  color: #9c8f13;
+}
+
+.light-theme .calculator-btn:hover {
+  background-color: #dfea68;
 }
