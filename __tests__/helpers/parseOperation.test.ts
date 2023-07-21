@@ -1,6 +1,6 @@
 import parseOperation from '../../src/helpers/parseOperation';
 
-describe('parseOperation function', () => {
+describe('Tests on parseOperation.ts', () => {
   test('should replace "×" with "*"', () => {
     const operation = '2×3';
     const result = parseOperation(operation);

@@ -1,4 +1,4 @@
-import convertToScientificNotation from '../helpers/convertToScientificNotation';
+import formatResult from '../helpers/formatResult';
 
 interface Props {
   error?: string;
@@ -6,11 +6,7 @@ interface Props {
 }
 
 const ResultDisplay: React.FC<Props> = ({ result, error }) => {
-  const displayedResult = error
-    ? error
-    : Math.abs(result) >= 10000000000000 && isFinite(result)
-    ? convertToScientificNotation(result)
-    : result.toLocaleString('en-US');
+  const displayedResult = formatResult(result, error);
 
   return (
     <span
