@@ -5,7 +5,7 @@ interface Props {
   result: number;
 }
 
-const ResultDisplay: React.FC<Props> = ({ result, error }) => {
+const ResultDisplay: React.FC<Props> = ({ result, error = '' }) => {
   const displayedResult = formatResult(result, error);
 
   return (

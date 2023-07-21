@@ -36,7 +36,7 @@ describe('Tests on <Button />', () => {
     expect(dispatchMock).toBeCalledWith({ type: 'RESET' });
   });
 
-  test('should call dispatch with set error on invalid operation', () => {
+  test('should call dispatch with set error', () => {
     const dispatchMock = vi.fn();
 
     render(<Button dispatch={dispatchMock} keySign='=' operation='10+7+5(' />);
@@ -61,7 +61,7 @@ describe('Tests on <Button />', () => {
     expect(dispatchMock).toBeCalledWith({ type: 'SET_RESULT', payload: 22 });
   });
 
-  test('should call dispatch set operation', () => {
+  test('should not call dispatch', () => {
     const dispatchMock = vi.fn();
 
     render(
