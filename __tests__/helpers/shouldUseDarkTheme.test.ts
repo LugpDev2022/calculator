@@ -1,9 +1,9 @@
 import shouldUseDarkTheme from '../../src/helpers/shouldUseDarkTheme';
 
 describe('Tests on shouldUseDarkTheme.ts', () => {
-  test('should set dark theme on undefined', () => {
-    localStorage.clear();
+  beforeEach(() => localStorage.clear());
 
+  test('should set dark theme on undefined', () => {
     const result = shouldUseDarkTheme();
     expect(result).toBeTruthy();
   });

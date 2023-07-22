@@ -1,21 +1,10 @@
-import { useState } from 'react';
-
-import shouldUseDarkTheme from './helpers/shouldUseDarkTheme';
+import useTheme from './hooks/useTheme';
 import ThemeSwitch from './components/ThemeSwitch';
 import Screen from './components/Screen';
 import ButtonsGrid from './components/ButtonsGrid';
 
 function App() {
-  const [isThemeDark, setIsThemeDark] = useState(shouldUseDarkTheme());
-
-  const toggleTheme = () => {
-    if (isThemeDark) {
-      localStorage.setItem('calculatorTheme', 'light');
-    } else {
-      localStorage.setItem('calculatorTheme', 'dark');
-    }
-    setIsThemeDark(!isThemeDark);
-  };
+  const { isThemeDark, toggleTheme } = useTheme();
 
   return (
     <div
